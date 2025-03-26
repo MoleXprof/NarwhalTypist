@@ -17,26 +17,16 @@ const Header = () => {
                     height={60}
                 />
                 <div>
-                    <h2 className='font-extrabold tracking-tight text-2xl text-gray-400 mt-1.5 hidden md:block' id="top">
+                    <h2 className='font-extrabold tracking-tight text-2xl text-sky-200 mt-1.5 hidden md:block' id="top">
                         {"NarwhalTypist"}
                     </h2>
-                    <h2 className='font-normal tracking-tight text-xs text-gray-400 -mt-1.5 hidden md:block'>
+                    <h2 className='font-normal tracking-tight text-xs text-sky-200 -mt-1.5 hidden md:block'>
                         {"narwhals, narwhals typing in the ocean, causing a commotion"}
                     </h2>
                 </div>
             </div>
         </Link>
         <ul className="list-none flex justify-end items-center gap-5">
-            <li className="text-gray-400 hover:text-gray-500" key="stats">
-                <Link href="/stats">
-                    <IoStatsChartSharp className='h-6 w-6' />
-                </Link>
-            </li>
-            <li className="text-gray-400 hover:text-gray-500" key="login">
-                <Link href="/login">
-                    <IoMdPerson className='h-6 w-6' />
-                </Link>
-            </li>
             <li className="text-gray-400 hover:text-gray-500" key="info">
                 <Link href="/info">
                     <IoInformationCircle className='h-6 w-6' />

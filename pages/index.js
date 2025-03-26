@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { generate, count } from "random-words";
+import { generate } from "random-words";
 import HomePage from "../../narwhaltypist/components/layouts/index"
 
 export const NUM_WORDS = 200;

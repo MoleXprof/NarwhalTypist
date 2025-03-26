@@ -44,7 +44,7 @@ const HomePage = ({ words, setWords }: HomeProps) => {
 				<button type="button" className="relative group text-gray-400 hover:text-gray-500 py-10" onClick={resetTest}>
 					<IoMdRefresh className="h-6 w-6" />
 					<span className="mt-2 absolute left-1/2 transform -translate-x-1/2 hidden group-hover:block bg-gray-900 text-white text-xs rounded-lg px-3 py-2 shadow-lg">
-						{"Restart Test"}
+						{"New Test"}
 					</span>
 				</button>
 				

@@ -25,7 +25,7 @@ const InfoPage = () => {
         <Header />
         <InfoSection
             title='about'
-            description={"NarwhalTypist was made to verify the user's typing speed under different circumstances and gamemodes. Test yourself in various modes, track your progress and improve your speed. By default, this website uses the most common 200 words in the English language to generate its tests. You can sign up or log in to keep track of your statistics."}
+            description={"NarwhalTypist was made to verify the user's typing speed under different circumstances and gamemodes. Test yourself in various modes, track your progress and improve your speed. By default, this website uses the most common 200 words in the English language to generate its tests."}
         />
 
         <InfoSection
@@ -67,7 +67,7 @@ const InfoPage = () => {
         />
 
         <div className='flex justify-center'>
-            <div className="border border-gray-500 my-16 bg-gray-400 text-sky-50 py-1.5 md:py-2.5 font-bold px-3 md:px-5 rounded-md hover:bg-bluegrey-600 text-xs md:text-base items-center flex w-fit gap-1 cursor-pointer">
+            <div className="border border-gray-400 my-16 bg-gray-400 text-sky-50 py-1.5 md:py-2.5 font-bold px-3 md:px-5 rounded-md hover:bg-gray-500 text-xs md:text-base items-center flex w-fit gap-1 cursor-pointer">
                 <FaRegPaperPlane />
                 <a href="mailto:kkhc99@gmail.com">
                     {"Contact"}
