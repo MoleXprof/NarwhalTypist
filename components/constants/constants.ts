@@ -10,3 +10,9 @@ export const gamemodes = [
     30,
     60
 ]
+
+export enum Status {
+	WAITING = "waiting",
+	STARTED = "started",
+	FINISHED = "finished"
+}

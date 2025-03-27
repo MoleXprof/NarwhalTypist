@@ -11,7 +11,7 @@ type ResultsPage = {
 
 const ResultsPage = ({ correct, incorrect }: ResultsPage) => {
     return (
-        <div className='bg-sky-50 h-screen w-full px-20 flex flex-col justify-between'>
+        <div className='bg-sky-150 h-screen w-full px-20 flex flex-col justify-between'>
             <Head>
                 <title>{"Results | NarwhalTypist"}</title>
                 <meta name="title" content="About | NarwhalTypist" />

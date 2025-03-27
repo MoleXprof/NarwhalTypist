@@ -1,11 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { IoMdPerson } from "react-icons/io";
 import { FaKeyboard } from "react-icons/fa";
 import { IoInformationCircle } from "react-icons/io5";
-import { IoStatsChartSharp } from "react-icons/io5";
+import { Status } from '../components/constants/constants';
 
-const Header = () => {
+type Props = {
+    readonly status?: Status
+}
+
+const Header = ({ status = Status.WAITING }: Props) => {
     return (
       <nav className="w-full flex py-4 justify-between items-center navbar">
         <Link href="/" passHref>
@@ -26,18 +29,21 @@ const Header = () => {
                 </div>
             </div>
         </Link>
-        <ul className="list-none flex justify-end items-center gap-5">
-            <li className="text-gray-400 hover:text-gray-500" key="info">
-                <Link href="/info">
-                    <IoInformationCircle className='h-6 w-6' />
-                </Link>
-            </li>
-            <li className="text-gray-400 hover:text-gray-500" key="home">
-                <Link href="/">
-                    <FaKeyboard className='h-6 w-6' />
-                </Link>
-            </li>
-        </ul>
+
+        { status !== Status.STARTED ?
+            <ul className="list-none flex justify-end items-center gap-5">
+                <li className="text-gray-400 hover:text-gray-500" key="info">
+                    <Link href="/info">
+                        <IoInformationCircle className='h-6 w-6' />
+                    </Link>
+                </li>
+                <li className="text-gray-400 hover:text-gray-500" key="home">
+                    <Link href="/">
+                        <FaKeyboard className='h-6 w-6' />
+                    </Link>
+                </li>
+            </ul> : null
+        }
       </nav>
     );
 };

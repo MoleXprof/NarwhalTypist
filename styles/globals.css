@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .hyperlink {
-    @apply cursor-pointer font-bold text-gray-500 hover:text-gray-600 hover:underline;
+    @apply cursor-pointer font-bold text-sky-200 hover:text-sky-300 hover:underline;
 }
 
 @layer base {
