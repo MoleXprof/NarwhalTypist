@@ -6,10 +6,7 @@ export const howTo = [
 ]
 
 export const gamemodes = [
-    "15 seconds",
-    "30 seconds",
-    "60 seconds",
-    "25 words",
-    "50 words",
-    "100 words"
+    15,
+    30,
+    60
 ]

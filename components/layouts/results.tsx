@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Footer from "../footer";
 import Header from "../header";
 import { RiArrowDropRightLine } from "react-icons/ri";
-import { BsArrowRepeat } from "react-icons/bs";
+import Link from 'next/link';
 
 type ResultsPage = {
     readonly correct: number;
@@ -63,20 +63,13 @@ const ResultsPage = ({ correct, incorrect }: ResultsPage) => {
                     </div>
                 </div>
 
-                <div className='w-full flex justify-evenly'>
-                    <button type="button" className="relative group text-gray-400 hover:text-gray-500 py-10">
+                <div className='w-full flex justify-center'>
+                    <Link className="relative group text-gray-400 hover:text-gray-500 py-10" href="/">
                         <RiArrowDropRightLine className="h-9 w-9" />
                         <span className="mt-2 absolute left-1/2 transform -translate-x-1/2 hidden group-hover:block bg-gray-900 text-white text-xs rounded-lg px-3 py-2 shadow-lg">
                             {"Next Test"}
                         </span>
-                    </button>
-
-                    <button type="button" className="relative group text-gray-400 hover:text-gray-500 py-10">
-                        <BsArrowRepeat className="h-9 w-9" />
-                        <span className="mt-2 absolute left-1/2 transform -translate-x-1/2 hidden group-hover:block bg-gray-900 text-white text-xs rounded-lg px-3 py-2 shadow-lg">
-                            {"Repeat Test"}
-                        </span>
-                    </button>
+                    </Link>
                 </div>
             </div>
 
