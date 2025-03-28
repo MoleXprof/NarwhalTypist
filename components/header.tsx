@@ -40,8 +40,8 @@ const Header = ({ status = Status.WAITING }: Props) => {
                     <h2 className='font-extrabold tracking-tight text-2xl text-sky-200 dark:text-dark-highlight mt-1.5 hidden md:block' id="top">
                         {"NarwhalTypist"}
                     </h2>
-                    <h2 className='font-normal tracking-tight text-xs text-sky-200 -mt-1.5 hidden md:block dark:text-dark-highlight'>
-                        {"narwhals, narwhals typing in the ocean, causing a commotion"}
+                    <h2 className='font-normal tracking-tight text-xs text-gray-400 -mt-1.5 hidden md:block dark:text-dark-text-highlight'>
+                        {"narwhals, narwhals, typing in the ocean, causing a commotion"}
                     </h2>
                 </div>
             </div>

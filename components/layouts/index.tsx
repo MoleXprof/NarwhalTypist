@@ -109,7 +109,7 @@ const HomePage = ({ words, setWords }: HomeProps) => {
 				}
 			}
 
-			if (event.key === 'Enter') {
+			if (event.key === 'Enter') { // change to space
 				// check if the input is correct
 				setCurrentInput("");
 			}
