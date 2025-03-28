@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { generate } from "random-words";
-import HomePage from "../../narwhaltypist/components/layouts/index";
+import HomePage from "../components/layouts/index";
 
 export const NUM_WORDS = 200;
 
