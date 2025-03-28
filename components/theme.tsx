@@ -1,3 +1,5 @@
+'use client'
+
 import { useTheme } from "next-themes";
 import { MdLightMode } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";

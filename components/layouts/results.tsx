@@ -5,11 +5,11 @@ import { RiArrowDropRightLine } from "react-icons/ri";
 import Link from 'next/link';
 
 type ResultsPage = {
-    readonly correct: number;
-    readonly incorrect: number;
+    readonly correct?: number;
+    readonly incorrect?: number;
 }
 
-const ResultsPage = ({ correct, incorrect }: ResultsPage) => {
+const ResultsPage = ({ correct = 0, incorrect = 0 }: ResultsPage) => {
     return (
         <div className='bg-sky-150 dark:bg-dark-bg h-screen w-full px-20 flex flex-col justify-between'>
             <Head>
@@ -35,7 +35,7 @@ const ResultsPage = ({ correct, incorrect }: ResultsPage) => {
                     <div>
                         <h2 className='text-gray-400 dark:text-dark-text text-3xl font-bold'>{"acc"}</h2>
                         <div className='flex gap-2 text-sky-400 dark:text-dark-highlight font-extrabold text-7xl'>
-                            <p>{String(Math.round(correct / (correct + incorrect) * 100))}</p>
+                            <p>{String(Math.round((correct ?? 0) / ((correct ?? 0) + (incorrect ?? 0)) * 100))}</p>
                             <p>{"%"}</p>
                         </div>
                     </div>

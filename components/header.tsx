@@ -21,7 +21,6 @@ const Header = ({ status = Status.WAITING }: Props) => {
         if (theme === 'dark') {
             setImageSrc('/images/narwhal-dark.jpeg');
         } else {
-            console.log(theme);
             setImageSrc('/images/narwhal.jpg');
         }
     }, [theme]);
