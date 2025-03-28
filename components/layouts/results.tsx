@@ -35,7 +35,7 @@ const ResultsPage = ({ correct, incorrect }: ResultsPage) => {
                     <div>
                         <h2 className='text-gray-400 dark:text-dark-text text-3xl font-bold'>{"acc"}</h2>
                         <div className='flex gap-2 text-sky-400 dark:text-dark-highlight font-extrabold text-7xl'>
-                            <p>{Math.round(correct / (correct + incorrect) * 100)}</p>
+                            <p>{String(Math.round(correct / (correct + incorrect) * 100))}</p>
                             <p>{"%"}</p>
                         </div>
                     </div>
