@@ -11,7 +11,7 @@ const Footer = () => {
                     target="_blank"
                     rel="noreferrer"
                 >
-                    <IoLogoGithub className="text-sky-200 h-4 w-4 md:h-6 md:w-6 hover:text-sky-300"/>
+                    <IoLogoGithub className="text-sky-200 h-4 w-4 md:h-6 md:w-6 hover:text-sky-300 dark:text-dark-text dark:hover:text-dark-text-highlight"/>
                 </a>
             
                 <a
@@ -20,11 +20,11 @@ const Footer = () => {
                     target="_blank"
                     rel="noreferrer"
                 >
-                    <FaLinkedin className="text-sky-200 h-4 w-4 md:h-6 md:w-6 hover:text-sky-300"/>
+                    <FaLinkedin className="text-sky-200 h-4 w-4 md:h-6 md:w-6 hover:text-sky-300 dark:text-dark-text dark:hover:text-dark-text-highlight"/>
                 </a>
             </div>
 
-            <p className="text-right text-sky-200 font-bold uppercase text-sm md:text-xl font-header">
+            <p className="text-right text-sky-200 font-bold uppercase text-sm md:text-xl font-header dark:text-dark-text">
                 {"Built by Kyle Chin"}
             </p>
         </div>

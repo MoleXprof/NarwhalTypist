@@ -6,7 +6,7 @@ const Error = () => {
         <div>
             <Head>
                 <title>
-                    404 | NarwhalTypist
+                    {"404 | NarwhalTypist"}
                 </title>
                 <meta name="title" content="404 | NarwhalTypist" />
                 <meta
@@ -15,16 +15,17 @@ const Error = () => {
                 />
                 <link rel="shortcut icon" href="/images/narwhal.jpg" />
             </Head>
-             <div className="flex min-h-screen flex-col bg-sky-150 pt-16 pb-12">
+            
+             <div className="flex min-h-screen flex-col bg-sky-150 dark:bg-dark-bg pt-16 pb-12">
                 <main className="mx-auto flex w-full max-w-7xl flex-grow flex-col justify-center px-4 sm:px-6 lg:px-8">
                     <div className="text-center">
-                        <p className="text-sm font-semibold uppercase tracking-wide text-sky-200">
+                        <p className="text-sm font-semibold uppercase tracking-wide text-sky-200 dark:text-dark-text-highlight">
                             {"404 error"}
                         </p>
-                        <h1 className="mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl text-sky-300">
+                        <h1 className="mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl text-sky-300 dark:text-dark-text">
                             {"Page not found."}
                         </h1>
-                        <p className="mt-4 mb-2 text-sm font-semibold uppercase tracking-wide text-sky-200">
+                        <p className="mt-4 mb-2 text-sm font-semibold uppercase tracking-wide text-sky-200 dark:text-dark-text-highlight">
                             {"You typed something wrong!"}
                         </p>
                         <Link href="/" passHref>

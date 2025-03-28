@@ -1,17 +1,13 @@
 import Head from 'next/head'
 import Header from '../header'
 import Footer from '../footer'
-import { useRouter } from "next/router"
 import { howTo } from '../constants/constants'
 import InfoSection from '../../components/infoSection'
 import { FaRegPaperPlane } from "react-icons/fa";
 
 const InfoPage = () => {
-//   const router = useRouter();
-//   const domain = router.route.split("/");
-
   return (
-    <div className='bg-sky-150 h-screen w-full px-20 flex flex-col justify-between'>
+    <div className='bg-sky-150 dark:bg-dark-bg h-screen w-full px-20 flex flex-col justify-between'>
         <Head>
             <title>{"Info | NarwhalTypist"}</title>
             <meta name="title" content="About | NarwhalTypist" />
@@ -67,7 +63,10 @@ const InfoPage = () => {
         />
 
         <div className='flex justify-center'>
-            <div className="border border-sky-400 my-16 bg-sky-300 text-sky-150 py-1.5 md:py-2.5 font-bold px-3 md:px-5 rounded-md hover:bg-sky-400 text-xs md:text-base items-center flex w-fit gap-1 cursor-pointer">
+            <div className="border border-sky-400 dark:border-dark-highlight-highlight my-16 bg-sky-300 
+                dark:bg-dark-highlight text-sky-150 dark:text-dark-bg py-1.5 md:py-2.5 font-bold
+                 px-3 md:px-5 rounded-md hover:bg-sky-400 dark:hover:bg-dark-highlight-highlight text-xs md:text-base items-center 
+                 flex w-fit gap-1 cursor-pointer">
                 <FaRegPaperPlane />
                 <a href="mailto:kkhc99@gmail.com">
                     {"Contact"}

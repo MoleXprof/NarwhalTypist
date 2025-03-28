@@ -18,9 +18,18 @@ module.exports = {
 				gray: {
 					350: "#afb9c1",
 					450: "#9ea8b0"
+				},
+				dark: {
+					bg: "#28292b",
+					"text-correct": "#e3e6ea",
+					text: "#54585c",
+					"text-highlight": "#6b7075",
+					highlight: "#dfdacd",
+					"highlight-highlight": "#b0aba2",
 				}
 			}
 		},
 	},
 	plugins: [],
+	darkMode: "class",
 }

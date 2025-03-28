@@ -100,7 +100,7 @@ const HomePage = ({ words, setWords }: HomeProps) => {
 				return;
 			}
 
-			if (event.key === 'Tab') {
+			if (event.key === 'Tab') { // on tab focus the new test button
 				event.preventDefault();
 
 				const newTestButton = document.getElementById('newTestButton');
@@ -145,7 +145,7 @@ const HomePage = ({ words, setWords }: HomeProps) => {
     // };
 
     return (
-        <div className='bg-sky-150 h-screen w-full px-20 flex flex-col justify-between'>
+        <div className='bg-sky-150 dark:bg-dark-bg h-screen w-full px-20 flex flex-col justify-between'>
 			<Head>
 				<title>{"NarwhalTypist"}</title>
 				<meta name="title" content="NarwhalTypist" />
@@ -161,7 +161,7 @@ const HomePage = ({ words, setWords }: HomeProps) => {
 			<div className='flex flex-col justify-center items-center'>
 				<div className="w-full">
 					{ status === Status.WAITING ?
-						<div className="flex justify-center items-center gap-2 text-gray-400 text-md">
+						<div className="flex justify-center items-center gap-4 text-gray-400 text-md dark:text-dark-text">
 							<FaGlobeAmericas />
 							<div> {"english"} </div>
 						</div> : <div className="h-[24px]" />
@@ -173,8 +173,8 @@ const HomePage = ({ words, setWords }: HomeProps) => {
 						<div className="h-[40px]" />
 					}
 					
-					<div className="relative w-full max-h-[124px] overflow-hidden">
-						<div className={`w-full max-h-[124px] flex flex-wrap gap-2 justify-start items-center text-gray-400 ${isFocused ? "" : "blur"} text-3xl tracking-normal`}>
+					<div className="relative w-full max-h-[124px]">
+						<div className={`w-full max-h-[124px] flex flex-wrap gap-2 justify-start items-center dark:text-dark-text text-gray-400 ${isFocused ? "" : "blur"} text-3xl tracking-normal overflow-hidden`}>
 							{words.map((word, index) => (
 								<div key={index} className="flex pr-3">
 									{word.split("").map((char, charIndex) => (
@@ -187,7 +187,7 @@ const HomePage = ({ words, setWords }: HomeProps) => {
 						</div>
 
 						{!isFocused ?
-							<div className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-gray-400">
+							<div className="absolute top-1/3 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-gray-400 dark:text-dark-text-correct m-4">
 								<div className="flex gap-2 text-center justify-center items-center">
 									<FaMousePointer />
 									<p>{"Click here or any key to focus"}</p>
@@ -198,7 +198,7 @@ const HomePage = ({ words, setWords }: HomeProps) => {
 					</div>
 				</div>
 
-				<button id="newTestButton" type="button" className="text-gray-400 hover:text-gray-500 p-4 my-[40px]" onClick={resetTest}>
+				<button id="newTestButton" type="button" className="text-gray-400 hover:text-gray-500 dark:text-dark-text dark:hover:text-dark-text-highlight p-4 my-[40px]" onClick={resetTest}>
 					<IoMdRefresh className="h-6 w-6" />
 				</button>
 			</div>
