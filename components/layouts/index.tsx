@@ -167,7 +167,7 @@ const HomePage = ({ words, setWords }: HomeProps) => {
 						</div> : <div className="h-[24px]" />
 					}
 					{status === Status.STARTED ?
-						<div className="text-sky-400 font-extrabold text-4xl">
+						<div className="text-sky-400 dark:text-dark-highlight font-extrabold text-4xl">
 							{countDown}
 						</div> :
 						<div className="h-[40px]" />

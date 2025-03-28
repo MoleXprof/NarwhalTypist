@@ -15,7 +15,7 @@ const Header = ({ status = Status.WAITING }: Props) => {
     const [mounted, setMounted] = useState(false);
     useEffect(() => setMounted(true), []);
     const { theme } = useTheme();
-    const [imageSrc, setImageSrc] = useState('/images/narwhal.png');
+    const [imageSrc, setImageSrc] = useState('/images/narwhal.jpg');
     
     useEffect(() => {
         if (theme === 'dark') {
