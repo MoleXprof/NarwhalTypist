@@ -41,9 +41,16 @@ const HomePage = () => {
     // const [correct, setCorrect] = useState(0);
     // const [incorrect, setIncorrect] = useState(0);
     const [status, setStatus] = useState(Status.WAITING);
+	const [isMac, setIsMac] = useState(false);
 
 	const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
+	// checks if the user is on a mac or not
+	useEffect(() => {
+		if (typeof window !== "undefined") {
+			setIsMac(/Mac/.test(navigator.userAgent));
+		}
+	}, []);
 
 	// generate 200 random words
 	useEffect(() => {
@@ -54,7 +61,7 @@ const HomePage = () => {
 	// reset the test
 	const resetTest = () => {
 		if (intervalRef.current) clearInterval(intervalRef.current);
-		
+
 		const generatedWords = generate(NUM_WORDS);
 		setWords(convertCharToLetterObject(Array.isArray(generatedWords) ? generatedWords : [generatedWords]));
 		setStatus(Status.WAITING);
@@ -120,6 +127,7 @@ const HomePage = () => {
 		const handleType = (event) => {
 			if (event.key === 'Backspace') {
 				setCurrentInput(currentInput => currentInput.slice(0, -1));
+				// set the previous letter to not typed and correct to false
 				return;
 			}
 
@@ -134,6 +142,7 @@ const HomePage = () => {
 
 			if (event.key === 'Space') { // change to space
 				// check if the input is correct
+				// check if that entire word is spelt correctly
 				setCurrentInput("");
 			}
 
@@ -232,7 +241,13 @@ const HomePage = () => {
 			</div>
 
 			{status !== Status.STARTED ?
-				<Footer/> : <div className='h-[28px]'/>
+				<div>
+					<div className='flex justify-center items-center text-gray-400 dark:text-dark-text gap-2 text-sm'>
+						<div className='dark:text-dark-bg bg-dark-text px-2 py-0.5 rounded-sm text-xs'>{isMac ? "cmd" : "ctrl"}</div> + <div className='dark:text-dark-bg bg-dark-text px-2 py-0.5 rounded-sm text-xs'>R</div> - reset test
+					</div>
+					<Footer/> 
+				</div>
+				: <div className='h-[48px]'/>
 			}
     	</div>
     );
