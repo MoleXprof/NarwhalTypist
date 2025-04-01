@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Header from '../header'
 import Footer from '../footer'
 import { IoMdRefresh } from "react-icons/io";
-import { NUM_WORDS } from "../../pages/index"
 import { generate } from 'random-words';
 import { useRouter } from "next/router";
 import { useState, useEffect, useRef, useCallback } from "react";
@@ -10,18 +9,34 @@ import { FaMousePointer } from "react-icons/fa";
 import { FaGlobeAmericas } from "react-icons/fa";
 import { Status } from '../constants/constants';
 
-type HomeProps = {
-	readonly words: string[], 
-	readonly setWords: (arg: string | string[]) => {}
+type Letter = {
+	readonly value: string;
+	readonly typed: boolean;
+	readonly correct: boolean;
 }
 
-const SECONDS = 30;
+type Word = Letter[];
 
-const HomePage = ({ words, setWords }: HomeProps) => {	
+const SECONDS = 30;
+const NUM_WORDS = 200;
+
+// convert chars into letter object
+const convertCharToLetterObject = (words: string[]): Word[] => {
+	return words.map((word) => 
+		word.split('').map((char) => ({
+			value: char,
+			typed: false,
+			correct: false
+		}))
+	);
+};
+
+const HomePage = () => {	
 	const router = useRouter();
     const [isFocused, setIsFocused] = useState(true);
     const [countDown, setCountDown] = useState(SECONDS);
 	const [currentInput, setCurrentInput] = useState("");
+	const [words, setWords] = useState([]);
 	// const [currentWordIndex, setCurrentWordIndex] = useState(0);
     // const [correct, setCorrect] = useState(0);
     // const [incorrect, setIncorrect] = useState(0);
@@ -29,11 +44,19 @@ const HomePage = ({ words, setWords }: HomeProps) => {
 
 	const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
+
 	// generate 200 random words
+	useEffect(() => {
+		const generatedWords = generate(NUM_WORDS);
+		setWords(convertCharToLetterObject(Array.isArray(generatedWords) ? generatedWords : [generatedWords]));
+	}, []);
+
+	// reset the test
 	const resetTest = () => {
 		if (intervalRef.current) clearInterval(intervalRef.current);
-
-		setWords(generate(NUM_WORDS));
+		
+		const generatedWords = generate(NUM_WORDS);
+		setWords(convertCharToLetterObject(Array.isArray(generatedWords) ? generatedWords : [generatedWords]));
 		setStatus(Status.WAITING);
 		setCountDown(SECONDS);
 		setCurrentInput("");
@@ -109,7 +132,7 @@ const HomePage = ({ words, setWords }: HomeProps) => {
 				}
 			}
 
-			if (event.key === 'Enter') { // change to space
+			if (event.key === 'Space') { // change to space
 				// check if the input is correct
 				setCurrentInput("");
 			}
@@ -174,12 +197,17 @@ const HomePage = ({ words, setWords }: HomeProps) => {
 					}
 					
 					<div className="relative w-full max-h-[124px]">
-						<div className={`w-full max-h-[124px] flex flex-wrap gap-2 justify-start items-center dark:text-dark-text text-gray-400 ${isFocused ? "" : "blur"} text-3xl tracking-normal overflow-hidden`}>
-							{words.map((word, index) => (
+						<div className={`w-full max-h-[124px] flex flex-wrap gap-2 justify-start items-center ${isFocused ? "" : "blur"} text-3xl tracking-normal overflow-hidden`}>
+							{words.map((word: Word, index: number) => (
 								<div key={index} className="flex pr-3">
-									{word.split("").map((char, charIndex) => (
-										<p key={charIndex}>
-											{char}
+									{word.map((letter: Letter, letterIndex: number) => (
+										<p key={letterIndex} className={`dark:text-dark-text text-gray-400
+										${letter.typed ? letter.correct
+												? "text-black dark:text-dark-text-correct"
+												: "text-red-600 dark:text-red-600 underline"
+											: ""
+										}`}>
+											{letter.value}
 										</p>
 									))}
 								</div>
