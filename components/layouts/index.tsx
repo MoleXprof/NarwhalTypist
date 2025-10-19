@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { FaMousePointer } from "react-icons/fa";
 import { FaGlobeAmericas } from "react-icons/fa";
-import { Status } from '../constants/constants';
+import { Key, Status, NUM_WORDS, SECONDS } from '../constants/constants';
 
 type Letter = {
 	readonly value: string;
@@ -16,9 +16,6 @@ type Letter = {
 }
 
 type Word = Letter[];
-
-const SECONDS = 30;
-const NUM_WORDS = 200;
 
 // convert chars into letter object
 const convertCharToLetterObject = (words: string[]): Word[] => {
@@ -124,14 +121,14 @@ const HomePage = () => {
 	}, [startTest, status]);
 
 	useEffect(() => {
-		const handleType = (event) => {
-			if (event.key === 'Backspace') {
+		const handleType = (event: any) => {
+			if (event.key === Key.BACKSPACE) { // on backspace remove last character
 				setCurrentInput(currentInput => currentInput.slice(0, -1));
 				// set the previous letter to not typed and correct to false
 				return;
 			}
 
-			if (event.key === 'Tab') { // on tab focus the new test button
+			if (event.key === Key.TAB) { // on tab focus the new test button
 				event.preventDefault();
 
 				const newTestButton = document.getElementById('newTestButton');
@@ -140,7 +137,7 @@ const HomePage = () => {
 				}
 			}
 
-			if (event.key === 'Space') { // change to space
+			if (event.key === Key.SPACE) { // change to space
 				// check if the input is correct
 				// check if that entire word is spelt correctly
 				setCurrentInput("");

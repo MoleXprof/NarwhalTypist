@@ -16,3 +16,14 @@ export enum Status {
 	STARTED = "started",
 	FINISHED = "finished"
 }
+
+export enum Key {
+    BACKSPACE = "Backspace",
+    ENTER = "Enter",
+    SHIFT = "Shift",
+    SPACE = "Space",
+    TAB = "Tab"
+}
+
+export const SECONDS = 30;
+export const NUM_WORDS = 200;
