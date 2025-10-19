@@ -3,28 +3,31 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
     "flowbite": "^3.1.1",
-    "next": "^15.2.4",
+    "next": "15.5.6",
     "next-themes": "^0.4.6",
     "random-words": "^2.0.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "react-icons": "^4.10.1",
     "remixicon": "^2.5.0"
   },
   "devDependencies": {
     "@types/node": "^22.13.14",
-    "@types/react": "18.0.26",
+    "@types/react": "19.2.2",
     "autoprefixer": "^10.4.13",
     "eslint": "8.32.0",
-    "eslint-config-next": "13.1.2",
+    "eslint-config-next": "15.5.6",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.4"
+  },
+  "overrides": {
+    "@types/react": "19.2.2"
   }
 }
